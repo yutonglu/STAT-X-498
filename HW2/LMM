@@ -1,0 +1,17 @@
+One of the methods we will frequently perform throughout this semester is Linear Mixed-Effects Model (LMM). All of the students in this class have learned LMM before; however, most students will face difficulties in applying LMM and interpreting computer outputs due to a lack of experience. 
+
+The purpose of this homework is to refresh your memory and be ready for consulting. In order to complete this homework, each team will do:
+
+ - 1. Introduce the definition of LMM
+
+ - 2. Explain when and why LMM is necessary and carried out
+
+ - 3. Select a statistical analysis package of your choice and find a dataset
+
+ - 4. Perform a LMM
+
+ - 5. Present the syntax and interpret the output
+
+ 
+
+Each team will present for 15 minutes. After completing this homework, you will be confident of performing LMM.
