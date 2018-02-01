@@ -1,0 +1,24 @@
+Nested design: Between (Factor) or Within (Time): use LMM
+IN (C1, C2, C3, C4) ...
+CO (C1, C2, C3, C4) ...
+
+Crossed design (use ANOVA): 
+
+In SPSS
+Dependent variable:
+-- Attention (HR) -- HR_Raw 
+-- Emotion (fEMG) -- EMG_Raw1000
+-- Arousal (SC) -- EDA_Raw
+
+Independent variable:
+RQ1: Article Prime -- News_Identity
+RQ2: Ease of Categorization -- Ease_of_categorization
+RQ3: Actual identity -- Actual_Identity
+1, 2, 3 are categorical
+RQ4: Transphobia -- Transphobia_GMC
+RQ5 (optional): time
+4, 5 are continuous
+
+Time:
+Continuous -- trend/pattern --> Growth Model
+Categorical -- compare --> Independence or not
