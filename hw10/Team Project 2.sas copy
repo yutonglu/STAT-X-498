@@ -1,0 +1,63 @@
+FILENAME REFFILE '/folders/myshortcuts/sf_myfolders/Wolverine_Reassessment_Stats_Class (average) copy.xlsx';
+
+PROC IMPORT DATAFILE=REFFILE
+	DBMS=XLSX
+	OUT=PBT;
+	GETNAMES=YES;
+RUN;
+
+PROC CONTENTS DATA = PBT; RUN;
+
+
+proc anova data = PBT;
+      class Site Time;
+      model ATSA__Benefits_over_Clinical_Jud = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
+
+proc anova data = PBT;
+      class Site Time;
+      model ATSA__Practiciality_Subscale = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
+
+
+proc anova data = PBT;
+      class Site Time;
+      model Organizational_Culture__Teamwork = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
+
+proc anova data = PBT;
+      class Site Time;
+      model Organizational_Culture__Climate_ = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
+
+
+proc anova data = PBT;
+      class Site Time;
+      model Organizational_Culture__Involvem = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
+
+
+proc anova data = PBT;
+      class Site Time;
+      model Organizational_Culture__Supervis = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
+
+
+proc anova data = PBT;
+      class Site Time;
+      model Organzational_Culture__Meeting_S = Site Time;
+      means Site / tukey;
+      means Time / tukey;
+run;
