@@ -22,14 +22,14 @@ ebpas_openness <- ggplot(data=averages_data,aes(y=`EBPAS: Openness Subscale`))
 ebpas_divergence <- ggplot(data=averages_data,aes(y=`EBPAS: Divergence Subscale`))
 
 atsa_judgement <- ggplot(data=averages_data,aes(y=`ATSA: Benefits over Clinical Judgement Scale`))
-atsa_quality <- ggplot(data=averages_data,aes(y=`ATSA: Psychometric Quality Scale`))
-atsa_practical <- ggplot(data=averages_data,aes(y=`ATSA: Practicality Subscale`))
+atsa_quality <- ggplot(data=averages_data,aes(y=`ATSA: Psychometric Quality Subscale`))
+atsa_practical <- ggplot(data=averages_data,aes(y=`ATSA: Practiciality Subscale`))
 
 cult_team <- ggplot(data=averages_data,aes(y=`Organizational Clulture: Teamwork Subscale`))
 cult_morale <- ggplot(data=averages_data,aes(y=`Organizational Culture: Climate/Morale Subscale`))
-cult_info <- ggplot(data=averages_data,aes(y=`Organizational Clulture: Information Subscale`))
+cult_info <- ggplot(data=averages_data,aes(y=`Organizational Culture Information Subscale`))
 cult_res <- ggplot(data=averages_data,aes(y=`Organizational Culture: Supervision Subscale`))
-cult_meet <- ggplot(data=averages_data,aes(y=`Organizational Clulture: Meeting Subscale`))
+cult_meet <- ggplot(data=averages_data,aes(y=`Organzational Culture: Meeting Subscale` ))
 
 fun_change <- ggplot(data=averages_data,aes(y=`Organizational Functioning: Motivation for Change`))
 fun_res <- ggplot(data=averages_data,aes(y=`Organizational Functioning: Resources`))
@@ -67,5 +67,35 @@ map_heat+geom_tile(aes(fill=`EBPAS: Appeal Subscale`))+scale_fill_gradient(low="
 ebpas_appeal+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)
 summary(averages_data$`EBPAS: Appeal Subscale`)
 
-cult_morale+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))
-map_heat+geom_tile(aes(fill=`Organizational Culture: Climate/Morale Subscale`))+scale_fill_gradient(low="black",high="cyan")
+atsa_judgement+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of ATSA: Benefits over Clinical Judgement Scale")
+
+atsa_quality+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of ATSA: Psychometric Quality Scale")
+
+atsa_practical+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of ATSA: Practicality Subscale")
+
+cult_team+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Teamwork Subscale")
+
+cult_morale+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Climate/Morale Subscale")
+
+cult_info+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Information Subscale")
+
+cult_res+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Supervision Subscale")
+
+cult_meet+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Meeting Subscale")
+
+fun_change+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Motivation Subscale")
+
+fun_res+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Resources Subscale")
+
+fun_staff+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Staff Subscale")
+
+fun_org+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Climate Subscale")
+
+fun_job+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Job Subscale")
+
+fun_work+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Practices Subscale")
+
+fun_satis+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Satisfaction Subscale")
+
+fun_exp+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Training Subscale")
+
