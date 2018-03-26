@@ -40,93 +40,103 @@ fun_work <- ggplot(data=averages_data,aes(y=`Organizational Functioning: Workpla
 fun_satis <- ggplot(data=averages_data,aes(y=`Organizational Functioning: Training Satisfaction`))
 fun_exp <- ggplot(data=averages_data,aes(y=`Organizational Functioning: Training Exposure and Utilization`))
 
-#Heatmap
-map_heat <- ggplot(data=averages_data,aes(x=as.factor(Time),y=as.factor(DQ_1Site)))
 
 ebpas_req+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of EBPAS: Requirement Subscale")
 ggplot(data=averages_data,aes(x=`EBPAS: Requirement Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of EBPAS: Requirement Subscale")
-map_heat+geom_tile(aes(fill=`EBPAS: Requirement Subscale`))+scale_fill_gradient(low="black",high="cyan")
-ebpas_req+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)
+ebpas_req+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For EBPAS: Requirement Subscale")
 summary(averages_data$`EBPAS: Requirement Subscale`)
 
 ebpas_openness+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of EBPAS: Openness Subscale")
 ggplot(data=averages_data,aes(x=`EBPAS: Openness Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of EBPAS: Openness Subscale")
-map_heat+geom_tile(aes(fill=`EBPAS: Openness Subscale`))+scale_fill_gradient(low="black",high="cyan")
-ebpas_openness+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)
+ebpas_openness+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For EBPAS: Openness Subscale")
 summary(averages_data$`EBPAS: Openness Subscale`)
 
 ebpas_divergence+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of EBPAS: Divergence Subscale")
 ggplot(data=averages_data,aes(x=`EBPAS: Divergence Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of EBPAS: Divergence Subscale")
-map_heat+geom_tile(aes(fill=`EBPAS: Divergence Subscale`))+scale_fill_gradient(low="black",high="cyan")
-ebpas_divergence+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)
+ebpas_divergence+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For EBPAS: Divergence Subscale")
 summary(averages_data$`EBPAS: Divergence Subscale`)
 
 ebpas_appeal+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of EBPAS: Appeal Subscale")
 ggplot(data=averages_data,aes(x=`EBPAS: Appeal Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of EBPAS: Appeal Subscale")
-map_heat+geom_tile(aes(fill=`EBPAS: Appeal Subscale`))+scale_fill_gradient(low="black",high="cyan")
-ebpas_appeal+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)
+ebpas_appeal+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For EBPAS: Appeal Subscale")
 summary(averages_data$`EBPAS: Appeal Subscale`)
 
 atsa_judgement+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of ATSA: Benefits over Clinical Judgement Scale")
 ggplot(data=averages_data,aes(x=`ATSA: Benefits over Clinical Judgement Scale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of ATSA: Benefits over Clinical Judgement Scale")
+atsa_judgement+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For ATSA: Benefits over Clinical Judgement Subscale")
 summary(averages_data$`ATSA: Benefits over Clinical Judgement Scale`)
 
 atsa_quality+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of ATSA: Psychometric Quality Scale")
 ggplot(data=averages_data,aes(x=`ATSA: Psychometric Quality Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of ATSA: Psychometric Quality Scale")
+atsa_quality+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For ATSA: Psychometric Quality Scale")
 summary(averages_data$`ATSA: Psychometric Quality Subscale`)
 
 atsa_practical+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of ATSA: Practicality Subscale")
 ggplot(data=averages_data,aes(x=`ATSA: Practiciality Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of ATSA: Practicality Subscale")
+atsa_practical+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For ATSA: Practicality Subscale")
 summary(averages_data$`ATSA: Practiciality Subscale`)
 
 cult_team+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Teamwork Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Clulture: Teamwork Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Culture: Teamwork Subscale")
+cult_team+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Culture: Teamwork Subscale")
 summary(averages_data$`Organizational Clulture: Teamwork Subscale`)
 
 cult_morale+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Climate/Morale Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Culture: Climate/Morale Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Culture: Climate/Morale Subscale")
+cult_morale+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Culture: Climate/Morale Subscale")
 summary(averages_data$`Organizational Culture: Climate/Morale Subscale`)
 
 cult_info+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Information Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Culture Information Subscale`))+geom_histogram(fill="red",binwidth=0.5)
+cult_info+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Culture: Information Subscale")
 summary(averages_data$`Organizational Culture Information Subscale`)
 
 cult_res+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Supervision Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Culture: Supervision Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Culture: Supervision Subscale")
+cult_res+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Culture: Supervision Subscale")
 summary(averages_data$`Organizational Culture: Supervision Subscale`)
 
 cult_meet+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Culture: Meeting Subscale")
 ggplot(data=averages_data,aes(x=`Organzational Culture: Meeting Subscale`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Culture: Meeting Subscale")
+cult_meet+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Culture: Meeting Subscale")
 summary(averages_data$`Organzational Culture: Meeting Subscale`)
 
 fun_change+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Motivation Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Motivation for Change`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Motivation Subscale")
+fun_change+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Motivation Subscale")
 summary(averages_data$`Organizational Functioning: Motivation for Change`)
 
 fun_res+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Resources Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Resources`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Resources Subscale")
+fun_res+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Resources Subscale")
 summary(averages_data$`Organizational Functioning: Resources`)
 
 fun_staff+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Staff Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Staff Attributes`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Staff Subscale")
+fun_staff+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Staff Subscale")
 summary(averages_data$`Organizational Functioning: Staff Attributes`)
 
 fun_org+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Climate Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Organizational Climate`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Climate Subscale")
+fun_org+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Climate Subscale")
 summary(averages_data$`Organizational Functioning: Organizational Climate`)
 
 fun_job+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Job Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Job Attitudes`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Job Subscale")
+fun_job+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Job Subscale")
 summary(averages_data$`Organizational Functioning: Job Attitudes`)
 
 fun_work+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Practices Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Workplace Practices`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Practices Subscale")
+fun_work+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Practices Subscale")
 summary(averages_data$`Organizational Functioning: Workplace Practices`)
 
 fun_satis+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Satisfaction Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Training Satisfaction`))+geom_histogram(fill="red",binwidth=1)+labs(title="Histogram of Org Function: Satisfaction Subscale")
+fun_satis+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Satisfaction Subscale")
 summary(averages_data$`Organizational Functioning: Training Satisfaction`)
 
 fun_exp+geom_boxplot(aes(x=as.factor(DQ_1Site),fill=as.factor(Time)))+labs(x="Site",fill="Time",title="Boxplot of Org Function: Training Subscale")
 ggplot(data=averages_data,aes(x=`Organizational Functioning: Training Exposure and Utilization`))+geom_histogram(fill="red",binwidth=0.5)+labs(title="Histogram of Org Function: Training Subscale")
+fun_exp+geom_smooth(aes(x=Time,col=as.factor(DQ_1Site)),se=FALSE)+labs(col="Site",title="Interaction Plot For Org Function: Training Subscale")
 summary(averages_data$`Organizational Functioning: Training Exposure and Utilization`)
