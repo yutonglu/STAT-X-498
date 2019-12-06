@@ -1,1 +1,1 @@
-# STAT-X498
+# STAT-X498 Statistical Consulting 
